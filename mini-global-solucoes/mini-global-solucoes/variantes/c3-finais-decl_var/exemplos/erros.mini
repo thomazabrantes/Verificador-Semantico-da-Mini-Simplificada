@@ -1,0 +1,23 @@
+// erros.mini — cada linha marcada contém um erro semântico
+int x, v[5];
+double d, m[3][4];
+bool ok;
+int x;                      // redeclaração
+int z[0];                   // dimensão não positiva
+
+void main() {
+    d = 3;                  // OK: coerção int -> double
+    x = d;                  // double -> int: perda de precisão
+    y = 2;                  // y não declarado
+    ok = x + 1;             // int atribuído a bool
+    if (x) print(x);        // condição não é bool
+    x = v;                  // arranjo usado como escalar
+    v[d] = 1;               // índice double
+    m[1] = 2.0;             // atribuição a arranjo (indexação parcial)
+    d = m[1][2][0];         // índices demais
+    x = ok[0];              // ok não é arranjo
+    d = m[1] * 2;           // arranjo em operação aritmética
+    x = (y + 1) * 2;        // y não declarado: só UM erro (tipo erro)
+    break;                  // break fora de laço
+    return 1;               // main é void
+}

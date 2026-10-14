@@ -1,0 +1,3 @@
+int a;
+void g() { }
+void main() { }

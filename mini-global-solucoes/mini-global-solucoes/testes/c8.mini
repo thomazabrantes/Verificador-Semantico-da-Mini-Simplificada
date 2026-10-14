@@ -1,0 +1,7 @@
+double m[3][4]; int v[5]; double d; int i, j;
+void main() {
+  d = m[i][j];
+  d = m[1] + 0;
+  d = m[1][2][0];
+  i = v[d];
+}

@@ -1,0 +1,32 @@
+// ok.mini — programa sem erros semânticos (somente variáveis globais)
+int i, j;
+double soma, media;
+int v[10];
+double m[3][4];             // arranjo de 2 dimensões: array(3, array(4, double))
+bool achou;
+
+void main() {
+    i = 0;
+    while (i < 3) {
+        j = 0;
+        while (j < 4) {
+            m[i][j] = i * 4 + j;    // int -> double (coerção)
+            j = j + 1;
+        }
+        i = i + 1;
+    }
+    soma = 0;
+    i = 0;
+    while (i < 10) {
+        v[i] = i * i;
+        soma = soma + v[i];
+        i = i + 1;
+    }
+    media = soma / 10;
+    achou = false;
+    if (m[2][3] > 10.5 && !achou) {
+        achou = true;
+        print(m[2][3]);
+    }
+    print(media);
+}

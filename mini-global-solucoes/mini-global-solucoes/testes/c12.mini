@@ -1,0 +1,6 @@
+int i;
+void main() {
+  while (i < 3) { while (i < 2) { break; } break; }
+  break;
+  return 1;
+}

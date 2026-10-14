@@ -1,0 +1,2 @@
+int v[5], w[5]; bool b;
+void main() { b = v == w; }

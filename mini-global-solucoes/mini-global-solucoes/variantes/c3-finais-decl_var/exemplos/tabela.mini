@@ -1,0 +1,17 @@
+// tabela.mini — visualizando a tabela de símbolos e os escopos
+int n, v[5];
+double m[2][3];
+$MOSTRA_TS                  // tabela após as primeiras declarações
+bool fim;
+
+void main() {
+    $TRACE_ON               // liga o trace: abre/fecha escopo, resolve
+    n = 2;
+    {
+        m[1][n] = v[n] * 1.5;
+        $MOSTRA_TS          // pilha de escopos dentro do bloco
+    }
+    $TRACE_OFF
+    fim = true;
+}
+$MOSTRA_TS                  // escopo global completo, após o main
